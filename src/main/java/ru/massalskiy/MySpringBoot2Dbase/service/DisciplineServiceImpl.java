@@ -2,13 +2,16 @@ package ru.massalskiy.MySpringBoot2Dbase.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.massalskiy.MySpringBoot2Dbase.entity.Discipline;
 import ru.massalskiy.MySpringBoot2Dbase.dao.DisciplineDAO;
 import java.util.List;
 
+
 @Service
 public class DisciplineServiceImpl implements DisciplineService {
+    @Qualifier("disciplineDAO")
     @Autowired
     private DisciplineDAO dao;
 
